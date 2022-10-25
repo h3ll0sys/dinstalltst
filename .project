@@ -1,0 +1,21 @@
+# Gambas Project File 3.0
+Startup=FMain
+Version=0.0.1
+Component=gb.image
+Component=gb.gui.qt
+Component=gb.form
+TabSize=2
+Translate=1
+Language=en_US
+SourcePath=/home/user/Documents
+Maintainer=Vladimir
+Address=vluzan78@gmail.com
+License=General Public License V3
+PackageName=dinstaltst-0.0.1
+Packager=1
+Systems=debian
+Menus=debian:"Applications/System/Administration"
+Categories=debian:"System"
+Groups=debian:"x11"
+ExtraDependencies=debian:"gparted\t\t"
+ExtraFiles=debian:"installscript\t/usr/bin\ninstallscript2\t/usr/src"

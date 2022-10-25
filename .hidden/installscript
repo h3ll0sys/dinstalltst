@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+echo "If you dont have /root and /boot/efi, create it with gparted"
+read -p "Enter your /root:" ROOTPART
+read -p "Enter your /boot/efi:" EFIPART
+mkdir -p /mnt/bistroot
+mount $ROOTPART /mnt/bistroot
+mkdir -p /mnt/bistroot/boot/efi
+mount $EFIPART /mnt/bistroot/boot/efi
+wget https://github.com/h3ll0sys/BistRed/releases/latest/download/bistred.txz -o /tmp/bistred.txz
+tar xf /tmp/bistred.txz -C /mnt/bistroot
+cp /usr/src/installscript2 /mnt/bistroot/usr/bin
+mount --types proc /proc /mnt/bistroot/proc
+mount --rbind /sys /mnt/bistroot/sys
+mount --make-rslave /mnt/bistroot/sys
+mount --rbind /dev /mnt/bistroot/dev
+mount --make-rslave /mnt/bistroot/dev
+mount --bind /run /mnt/bistroot/run
+mount --make-slave /mnt/bistroot/run
+chroot /mnt/bistroot "/usr/bin/installscript2"

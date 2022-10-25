@@ -1,0 +1,25 @@
+' Gambas class file
+
+Public Sub ExitButton_Click()
+  
+  Quit 
+  
+End
+
+Public Sub LsblkButton_Click()
+  
+  Shell "gparted"
+  
+End
+
+Public Sub InstallButton_Click()
+  
+  Shell "alacritty -e /usr/bin/installscript"
+  
+End
+
+Public Sub DevModeActivate_DblClick()
+  
+  Shell "alacritty"
+  
+End
