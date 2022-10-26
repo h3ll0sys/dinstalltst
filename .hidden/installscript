@@ -2,13 +2,14 @@
 echo "If you dont have /root and /boot/efi, create it with gparted"
 read -p "Enter your /root:" ROOTPART
 read -p "Enter your /boot/efi:" EFIPART
+read -p "Enter your username: " USERNAME
 mkdir -p /mnt/bistroot
 mount $ROOTPART /mnt/bistroot
 mkdir -p /mnt/bistroot/boot/efi
 mount $EFIPART /mnt/bistroot/boot/efi
-wget https://github.com/h3ll0sys/BistRed/releases/latest/download/bistred.txz -o /tmp/bistred.txz
-tar xf /tmp/bistred.txz -C /mnt/bistroot
+pacstrap /mnt base base-devel linux-lts linux-lts-headers xfce4 lightdm lightdm-gtk-greeter grub efibootmgr networkmanager network-manager-applet
 cp /usr/src/installscript2 /mnt/bistroot/usr/bin
+sed -i "s/USERHERE/$USERNAME" /mnt/bistroot/usr/bin/installscript2
 mount --types proc /proc /mnt/bistroot/proc
 mount --rbind /sys /mnt/bistroot/sys
 mount --make-rslave /mnt/bistroot/sys

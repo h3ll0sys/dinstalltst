@@ -1,31 +1,37 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,64,34)
+  MoveScaled(0,0,64,35)
   Background = &H282828&
   Resizable = False
   Border = False
   { InstallButton Button
-    MoveScaled(2,28,16,4)
+    MoveScaled(2,29,16,4)
     Background = &H282828&
     Foreground = &HFBF1C7&
     Text = ("Install")
   }
   { DevModeActivate PictureBox
-    MoveScaled(2,4,60,21)
+    MoveScaled(2,6,60,21)
     ToolTip = ("For Dev mode, double click here")
     Picture = Picture.Load("logo.png")
   }
   { ExitButton Button
-    MoveScaled(46,28,16,4)
+    MoveScaled(46,29,16,4)
     Background = &H282828&
     Foreground = &HFBF1C7&
     Text = ("Exit")
   }
   { LsblkButton Button
-    MoveScaled(20,28,24,4)
+    MoveScaled(20,29,24,4)
     Background = &H282828&
     Foreground = &HFBF1C7&
     Text = ("Gparted")
+  }
+  { nmtui Button
+    MoveScaled(46,1,16,4)
+    Background = &H282828&
+    Foreground = &HFBF1C7&
+    Text = ("Launch nmtui")
   }
 }

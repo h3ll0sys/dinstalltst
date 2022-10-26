@@ -23,3 +23,9 @@ Public Sub DevModeActivate_DblClick()
   Shell "alacritty"
   
 End
+
+Public Sub nmtui_Click()
+  
+  Shell "alacritty -e nmtui"
+  
+End

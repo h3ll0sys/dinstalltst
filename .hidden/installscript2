@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 grub-install
-update-grub
+grub-mkconfig /boot/grub/grub.cfg
+useradd -mG wheel USERHERE
+passwd USERHERE
+systemctl enable NetworkManager
+systemctl enable lightdm
+sed '110s/^#//' -i /etc/sudoers
